@@ -1,36 +1,79 @@
-# Lviv Grand Hotel - Система управління бронюванням
+# Hotel Booking System (Full Stack Web Application)
 
-## Стек технологій
-- **Фронтенд:** React 18 + Vite, Font Awesome 6
-- **Бекенд:** Node.js + Express.js  
-- **База даних:** MongoDB + Mongoose
+## Project Overview
+This is a full-stack hotel booking web application that allows users to browse rooms, register accounts, and make reservations. The system includes both frontend and backend parts with database integration.
 
-## Запуск бекенду
+## Tech Stack
+**Frontend:** 
+- React (Vite), 
+- JavaScript (ES6+)
+- HTML5 / CSS3
+
+**Backend:** 
+- Node.js
+- Express.js 
+
+**Database:** 
+- MongoDB + Mongoose
+
+## Project Structure
+```bash
+hotel_2_final/
+│
+├── backend/          # Node.js server
+│   ├── server.js
+│   ├── models/       # database models
+│   ├── Booking.js
+│   ├── Room.js
+│   ├── User.js
+│   ├── Guest.js
+│
+├── frontend/         # static frontend files
+├── src/              # React application source
+├── db/               # database files / configs
+├── package.json
+├── vite.config.js
+```
+
+## Features
+- User registration and authentication
+- Room browsing and availability checking
+- Booking system for hotel rooms
+- User profile management
+- Admin-side data structure (if applicable)
+ 
+## How to Run Project
+### Backend 
 ```bash
 cd backend
 npm install
-node seed.js        # заповнити базу тестовими даними
-node server.js      # запустити сервер на порту 5000
+node seed.js        # fill the database with test data
+node server.js      # start the server on port 5000
 ```
 
-## Запуск фронтенду (розробка)
+### Frontend
 ```bash
+cd frontend
 npm install
-npm run dev         # порт 5173
+npm run dev         # port 5173
 ```
 
-## Або відкрити готовий білд
-Відкрити `frontend/index.html` або запустити:
+### Or open a ready-made build
+Open  `frontend/index.html` or run:
 ```bash
 npx serve frontend
 ```
 
-## Функції
-- Автентифікація користувачів
-- Бронювання номерів
-- Управління гостями
-- Аналітика панелі інструментів
+## Testing Scope (QA)
+This project is used for QA practice and includes the following test areas:
+- User authentication testing
+- Room browsing and availability testing
+- Booking process testing
+- Form validation
+- UI testing
+- API endpoints testing
 
-## Тестові облікові записи
-- admin@lvivgrand.com / admin123
-- manager@lvivgrand.com / manager123
+## Author
+**Solomiia Yurchyshyn**
+QA / AQA aspiring engineer
+Focus: Test Automation, Python, Web/Software Testing
