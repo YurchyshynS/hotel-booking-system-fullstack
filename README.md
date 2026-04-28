@@ -58,12 +58,6 @@ npm install
 npm run dev         # port 5173
 ```
 
-### Or open a ready-made build
-Open  `frontend/index.html` or run:
-```bash
-npx serve frontend
-```
-
 ## Testing Scope (QA)
 This project is used for QA practice and includes the following test areas:
 - User authentication testing
@@ -74,6 +68,6 @@ This project is used for QA practice and includes the following test areas:
 - API endpoints testing
 
 ## Author
-**Solomiia Yurchyshyn**
-QA / AQA aspiring engineer
+**Solomiia Yurchyshyn**  
+QA / AQA aspiring engineer  
 Focus: Test Automation, Python, Web/Software Testing
