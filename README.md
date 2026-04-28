@@ -25,6 +25,12 @@ npm run dev         # порт 5173
 npx serve frontend
 ```
 
+## Features
+- User authentication
+- Room booking
+- Guest management
+- Dashboard analytics
+
 ## Тестові облікові записи
 - admin@lvivgrand.com / admin123
 - manager@lvivgrand.com / manager123
