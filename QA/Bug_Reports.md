@@ -90,3 +90,70 @@ Previously selected List View should remain active after navigation.
 - OS: Windows 11
 - Browser: Chrome 121
 - App Version: Local Development Build
+
+---
+
+## BUG-004: User passwords are stored and validated in plain text
+
+**ID:** BUG-004  
+**Priority:** Critical  
+**Severity:** Critical  
+**Module:** Authentication / Security
+
+### Steps to Reproduce
+1. Open backend authentication logic.
+2. Review login comparison.
+
+### Actual Result
+Password is compared directly without hashing.
+
+### Expected Result
+Passwords must be hashed (bcrypt/argon2) and never stored in plain text.
+
+### Environment
+- Backend: Node.js Express
+- DB: MongoDB
+
+---
+
+## BUG-005: Protected API routes can be accessed without token validation
+
+**ID:** BUG-005  
+**Priority:** Critical  
+**Severity:** Major  
+**Module:** Security / Authorization
+
+### Steps to Reproduce
+1. Send GET request to /api/bookings without token.
+2. Send GET request to /api/guests without token.
+
+### Actual Result
+Data is accessible without authentication.
+
+### Expected Result
+Protected endpoints must require valid token/session.
+
+### Environment
+- Backend: Node.js Express
+
+--
+
+## BUG-006: Mock token returned instead of real JWT authentication token
+
+**ID:** BUG-006  
+**Priority:** High  
+**Severity:** Major  
+**Module:** Authentication
+
+### Steps to Reproduce
+1. Login with valid credentials.
+
+### Actual Result
+System returns mock-jwt-token-* value.
+
+### Expected Result
+System should generate real signed JWT token with expiration.
+
+### Environment
+- Backend: Node.js Express
+
