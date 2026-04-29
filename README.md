@@ -1,11 +1,11 @@
 # Hotel Booking System (Full Stack Web Application)
 
 ## Project Overview
-This is a full-stack hotel booking web application that allows users to browse rooms, register accounts, and make reservations. The system includes both frontend and backend parts with database integration.
+This is a full-stack hotel booking web application that allows users to browse hotel rooms, register accounts, and make reservations. The system includes both frontend and backend parts with database integration.
 
 ## Tech Stack
 **Frontend:** 
-- React (Vite), 
+- React 18 (Vite) 
 - JavaScript (ES6+)
 - HTML5 / CSS3
 
