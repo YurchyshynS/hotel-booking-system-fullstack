@@ -1,0 +1,24 @@
+# Test Cases Suite: Hotel Booking System
+
+| ID | Title | Purpose | Pre-conditions | Steps | Expected Result |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **TC-001** | Successful Registration | Verify user can create an account with valid data. | User is on Registration page. | 1. Enter unique Name, Email, Password.<br>2. Click "Register". | User is redirected to Login/Dashboard. User record appears in DB. |
+| **TC-002** | Invalid Registration Fields (Negative) | Verify system blocks invalid data formats. | User is on Registration page. | 1. Enter "12345" in Name.<br>2. Enter "email-no-at" in Email.<br>3. Enter "1" in Password.<br>4. Click "Register". | Validation errors are displayed. Registration is blocked. |
+| **TC-003** | Duplicate Email Registration (Negative) | Prevent multiple accounts with one email. | Email "test@test.com" already exists in DB. | 1. Enter existing Email.<br>2. Fill other fields.<br>3. Click "Register". | Error message "Email already exists" is displayed. |
+| **TC-004** | Successful Login | Verify authorized access. | Registered user exists in DB. | 1. Enter valid Email and Password.<br>2. Click "Login". | User is logged in. Auth token/Session is created. |
+| **TC-005** | Login with Wrong Password (Negative) | Verify security against invalid credentials. | Registered user exists in DB. | 1. Enter valid Email.<br>2. Enter incorrect Password.<br>3. Click "Login". | Error message "Invalid credentials" appears. Access denied. |
+| **TC-006** | Password Change Logic | Ensure old password becomes invalid after change. | User is logged in. | 1. Go to Profile Settings.<br>2. Change password to new one.<br>3. Logout.<br>4. Try login with OLD password. | Login with old password fails. Login with new password succeeds. |
+| **TC-007** | Room Search Functionality | Verify rooms are displayed correctly. | Rooms are added to the DB. | 1. Navigate to Home/Rooms page. | All available rooms are listed with details (price, type, image). |
+| **TC-008** | Overbooking Prevention (Logic) | Prevent double booking for the same dates. | Room 101 is already booked for May 1-5. | 1. Login as User B.<br>2. Try to book Room 101 for May 1-5. | System blocks booking or shows "Unavailable" status for these dates. |
+| **TC-009** | Past Date Booking (Negative) | Prevent booking for dates that have already passed. | User is on Booking form. | 1. Select a check-in date in the past (e.g., yesterday).<br>2. Try to submit. | Past dates are disabled or validation error appears. |
+| **TC-010** | "Zero Nights" Stay (Negative) | Ensure minimum stay duration. | User is on Booking form. | 1. Select Check-in and Check-out as the same day.<br>2. Click "Confirm". | Booking is blocked or duration defaults to 1 night. |
+| **TC-011** | Total Price Calculation (Positive) | Verify math logic for stays. | Room price is 100/night. | 1. Select 3 nights stay.<br>2. Check "Total Price" field. | Total price displays 300. |
+| **TC-012** | Guest Limit Validation (Negative) | Prevent over-capacity booking. | Room max capacity is 2 guests. | 1. Enter 5 guests in booking form.<br>2. Try to confirm. | System shows "Exceeds capacity" error. |
+| **TC-013** | Unauthorized Booking Access | Prevent guests from booking without login. | User is NOT logged in. | 1. Click "Book Now" on any room. | Redirect to Login page or "Please login" popup appears. |
+| **TC-014** | Successful Booking Cancellation | Verify user can cancel their own booking. | User has an active booking. | 1. Go to "My Bookings".<br>2. Click "Cancel Booking". | Booking status changes to "Cancelled". Room becomes available. |
+| **TC-015** | XSS Script Injection in Name Field | Verify basic security sanitization. | User is on Registration page. | 1. Enter `<script>alert('XSS')</script>` in Name field.<br>2. Register. | Script is not executed; Name is saved as plain text or sanitized. |
+| **TC-016** | Empty Form Submission (Negative) | Verify mandatory field checks. | User is on Login page. | 1. Leave all fields empty.<br>2. Click "Login". | "Fields are required" messages are displayed. No API call sent. |
+| **TC-017** | Session Persistence after Refresh | Ensure user stays logged in. | User is logged in. | 1. Refresh the browser page (F5). | User remains authorized (Header still shows "Logout" button). |
+| ****TC-018** | API: GET /rooms returns 200 OK | Verify backend-database connection. | API server is running. | 1. Send GET request to `/api/rooms`. | Status 200 is returned with a JSON array of rooms. |
+| **TC-019** | API: POST /bookings with no Token | Verify API security. | Valid booking data ready. | 1. Send POST to `/api/bookings` without Auth Header. | Status 401 Unauthorized is returned. |
+| **TC-020** | Responsive UI: Mobile View | Verify usability on small screens. | Use Chrome DevTools. | 1. Switch to "iPhone 12" view.<br>2. Open Navigation Menu. | Menu collapses into "Hamburger". Content fits the screen width. |
