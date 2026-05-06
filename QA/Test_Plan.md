@@ -9,7 +9,7 @@ Verify functionality, stability and business logic of hotel booking web applicat
 ## Scope
 
 ### In Scope
-- Registration / Login
+- Registration, Login
 - Room listing
 - Booking creation
 - Booking cancellation

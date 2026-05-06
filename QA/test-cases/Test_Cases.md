@@ -2,7 +2,7 @@
 
 | ID | Title | Purpose | Pre-conditions | Steps | Expected Result |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| **TC-001** | Successful Registration | Verify user can create an account with valid data. | User is on Registration page. | 1. Enter unique Name, Email, Password.<br>2. Click "Register". | User is redirected to Login/Dashboard. User record appears in DB. |
+| **TC-001** | Successful Registration | Verify user can create an account with valid data | User is on Registration page. | 1. Enter unique Name, Email, Password.<br>2. Click "Register". | User is redirected to Login/Dashboard. User record appears in DB. |
 | **TC-002** | Invalid Registration Fields (Negative) | Verify system blocks invalid data formats. | User is on Registration page. | 1. Enter "12345" in Name.<br>2. Enter "email-no-at" in Email.<br>3. Enter "1" in Password.<br>4. Click "Register". | Validation errors are displayed. Registration is blocked. |
 | **TC-003** | Duplicate Email Registration (Negative) | Prevent multiple accounts with one email. | Email "test@test.com" already exists in DB. | 1. Enter existing Email.<br>2. Fill other fields.<br>3. Click "Register". | Error message "Email already exists" is displayed. |
 | **TC-004** | Successful Login | Verify authorized access. | Registered user exists in DB. | 1. Enter valid Email and Password.<br>2. Click "Login". | User is logged in. Auth token/Session is created. |

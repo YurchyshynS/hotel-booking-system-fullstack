@@ -12,4 +12,4 @@
 - Registration validation
 - Duplicate email
 - Booking happy path
-- API auth tests
+- API authorization tests

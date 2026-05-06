@@ -12,7 +12,7 @@
 - [ ] Available rooms displayed correctly
 - [ ] Room filtering by type works
 - [ ] Room details page opens correctly
-- [ ] Check-out date cannot be earlier than check-in
+- [ ] Check-out date cannot be earlier than check-in date
 - [ ] Booking cannot be created for occupied dates
 - [ ] Booking confirmation displayed after success
 

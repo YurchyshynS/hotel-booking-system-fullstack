@@ -16,4 +16,4 @@
 | **TC-API-012** | Delete booking | DELETE | `/api/bookings/:id` | 200 OK |
 | **TC-API-013** | Check-in confirmed booking | PATCH | `/api/bookings/:id/checkin` | 200 OK |
 | **TC-API-014** | Checkout checked-in guest | PATCH | `/api/bookings/:id/checkout` | 200 OK |
-| **TC-API-015** | Get dashboard stats | GET | `/api/admin/stats` | 200 OK with stats object |
+| **TC-API-015** | Get dashboard statistics | GET | `/api/admin/stats` | 200 OK with stats object |
